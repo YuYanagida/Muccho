@@ -71,6 +71,13 @@
         "com.unity.modules.imgui": "1.0.0"
       }
     },
+    "jp.digicre.flower-git": {
+      "version": "https://github.com/nenjiru/FlowerGit.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "e2b3197d6dad36547f292323794f677a6feb19cf"
+    },
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,
