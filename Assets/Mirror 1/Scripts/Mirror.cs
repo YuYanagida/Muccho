@@ -82,18 +82,20 @@ namespace nkjzm.Mirror
             // 鏡面座標に反転させた反射ベクトルを加算する
             ReflectionCamera.transform.position = transform.position - reflection;
             // 鏡面の方向に向ける
-            ReflectionCamera.transform.LookAt(transform.position);
+            //ReflectionCamera.transform.LookAt(transform.position);
+	    ReflectionCamera.transform.LookAt(transform.position);
             // カメラ設定の更新
             var distance = Vector3.Distance(transform.position, ReflectionCamera.transform.position);
             ReflectionCamera.nearClipPlane = distance * 0.9f;
 
             // 鏡面をカメラ方向に向ける
-            Specular.rotation = Quaternion.LookRotation(Specular.position - TrackingCamera.transform.position);
+            //Specular.rotation = Quaternion.LookRotation(Specular.position - TrackingCamera.transform.position);
 
             // フレームのサイズを更新
             Frame.localScale = new Vector3(Size, Size, 1);
             // 鏡面のサイズを調整
             var angle = Vector3.Angle(-transform.forward, ReflectionCamera.transform.forward);
+	    //var angle_2 = angle * 0.25f;
             var specularSize = Size + Mathf.Sin(angle * Mathf.Deg2Rad) * 2;
             Specular.localScale = new Vector3(-specularSize, specularSize, 1);
 
