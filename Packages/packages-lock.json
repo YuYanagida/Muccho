@@ -157,7 +157,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "e2b3197d6dad36547f292323794f677a6feb19cf"
+      "hash": "dababac44a033c2e6c8128507592297c393ebf82"
     },
     "jp.digicre.seika-game-kit": {
       "version": "https://github.com/nenjiru/SeikaGameKit.git",
