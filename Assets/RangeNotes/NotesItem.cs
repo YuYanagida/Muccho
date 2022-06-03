@@ -2,18 +2,19 @@ using UnityEngine;
 using UnityEngine.Events;
 using SeikaGameKit.Timeline;
 
-public class NotesItem : MonoBehaviour, IPlayingEventItem
+public class NotesItem : PlayingEventItem
 {
     #region DEFINITION
     #endregion
 
     #region VARIABLE
-    public bool isPlaying { get; set; }
     string _targetTagName = "Player";
-
     public GameObject displayObject;
     public ParticleSystem activationEffect;
     public ParticleSystem hitEffect;
+    public AudioSource se;
+    public AudioClip clip;
+
     [Space]
     public UnityEvent<int> hitCallback;
     #endregion
@@ -23,19 +24,25 @@ public class NotesItem : MonoBehaviour, IPlayingEventItem
     {
         if (isPlaying && other.CompareTag(_targetTagName))
         {
-            displayObject.SetActive(false);
+            //displayObject.SetActive(false);
             hitCallback?.Invoke(0);
+
+            Debug.Log($"{currentTime} {normalizedTime}");
+
             if (hitEffect != null)
             {
                 hitEffect.Play(true);
             }
+
+            se.PlayOneShot(clip);
+
         }
     }
 
     #endregion
 
     #region PUBLIC_METHODS
-    public void OnPlay()
+    public override void OnPlay()
     {
         if (displayObject != null)
         {
@@ -46,9 +53,11 @@ public class NotesItem : MonoBehaviour, IPlayingEventItem
         {
             activationEffect.Play(true);
         }
+
+       
     }
 
-    public void OnStop()
+    public override void OnStop()
     {
         if (displayObject != null)
         {
