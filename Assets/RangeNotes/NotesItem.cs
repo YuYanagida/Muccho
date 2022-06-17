@@ -8,7 +8,7 @@ public class NotesItem : PlayingEventItem
     #endregion
 
     #region VARIABLE
-    string _targetTagName = "Player";
+    public string _targetTagName1 = "Player";
     public GameObject displayObject;
     public ParticleSystem activationEffect;
     public ParticleSystem hitEffect;
@@ -22,7 +22,26 @@ public class NotesItem : PlayingEventItem
     #region UNITY_EVENT
     void OnTriggerEnter(Collider other)
     {
-        if (isPlaying && other.CompareTag(_targetTagName))
+        if (isPlaying && other.CompareTag(_targetTagName1))
+        {
+            //displayObject.SetActive(false);
+            hitCallback?.Invoke(0);
+
+            Debug.Log($"{currentTime} {normalizedTime}");
+
+            if (hitEffect != null)
+            {
+                hitEffect.Play(true);
+            }
+
+            se.PlayOneShot(clip);
+
+        }
+    }
+
+    void OnTriggerStay(Collider other)
+    {
+        if (isPlaying && other.CompareTag(_targetTagName1))
         {
             //displayObject.SetActive(false);
             hitCallback?.Invoke(0);
@@ -72,5 +91,6 @@ public class NotesItem : PlayingEventItem
     #endregion
 
     #region PRIVATE_METHODS
+
     #endregion
 }
