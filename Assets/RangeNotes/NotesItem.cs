@@ -14,12 +14,15 @@ public class NotesItem : PlayingEventItem
     public ParticleSystem hitEffect;
     public AudioSource se;
     public AudioClip clip;
+    public bool SEplayed = false;
+    public AudioClip[] SEs;
 
     [Space]
     public UnityEvent<int> hitCallback;
     #endregion
 
     #region UNITY_EVENT
+    /*
     void OnTriggerEnter(Collider other)
     {
         if (isPlaying && other.CompareTag(_targetTagName1))
@@ -38,6 +41,7 @@ public class NotesItem : PlayingEventItem
 
         }
     }
+    */
 
     void OnTriggerStay(Collider other)
     {
@@ -53,7 +57,16 @@ public class NotesItem : PlayingEventItem
                 hitEffect.Play(true);
             }
 
-            se.PlayOneShot(clip);
+            if(SEplayed == false)
+            {
+                AudioClip _se = SEs[Random.Range(0,2)];
+                
+                se.PlayOneShot(_se);
+
+                SEplayed = true;
+            }
+
+            
 
         }
     }
