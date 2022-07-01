@@ -16,6 +16,8 @@ public class NotesItem : PlayingEventItem
     public AudioClip clip;
     public bool SEplayed = false;
     public AudioClip[] SEs;
+    public AudioClip[] SEsm;
+    public AudioClip[] SEsf;
 
     [Space]
     public UnityEvent<int> hitCallback;
@@ -57,16 +59,57 @@ public class NotesItem : PlayingEventItem
                 hitEffect.Play(true);
             }
 
-            if(SEplayed == false)
+            /*if(SEplayed == false)
             {
                 AudioClip _se = SEs[Random.Range(0,2)];
                 
                 se.PlayOneShot(_se);
 
                 SEplayed = true;
-            }
+            }*/
 
-            
+            if (normalizedTime >= 0f && normalizedTime <= 0.25f)
+            {
+                Debug.Log($"Fast");
+
+                if (SEplayed == false)
+                {
+                    AudioClip _se = SEs[Random.Range(0, 9)];
+
+                    se.PlayOneShot(_se);
+
+                    SEplayed = true;
+                }
+
+            }
+            else if (normalizedTime > 0.25f && normalizedTime <= 0.5f)
+            {
+                Debug.Log($"Just");
+
+                if (SEplayed == false)
+                {
+                    AudioClip _sef = SEsf[Random.Range(0, 9)];
+
+                    se.PlayOneShot(_sef);
+
+                    SEplayed = true;
+                }
+
+            }
+            else if (normalizedTime > 0.5f)
+            {
+                Debug.Log($"Slow");
+
+                if (SEplayed == false)
+                {
+                    AudioClip _sem = SEsm[Random.Range(0, 6)];
+
+                    se.PlayOneShot(_sem);
+
+                    SEplayed = true;
+                }
+
+            }
 
         }
     }
