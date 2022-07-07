@@ -57,6 +57,8 @@ public class NotesItem : PlayingEventItem
             if (hitEffect != null)
             {
                 hitEffect.Play(true);
+
+               // hitEffect.Stop(true, ParticleSystemStopBehavior.StopEmitting);
             }
 
             /*if(SEplayed == false)
