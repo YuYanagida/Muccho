@@ -3,12 +3,30 @@ using UnityEngine.UI;
 
 public class ScoreCounter : MonoBehaviour
 {
-    public int score;
-    public Text scoreDisplay;
+    public static int score;
+    //public Text scoreDisplay;
 
-    public void AddScore(int point)
+    public static void AddScore(int point)
     {
         score += point;
-        scoreDisplay.text = $"Score {score}";
+
+        Debug.Log("score " + score);
+
     }
+
+    public void TotalScore()
+    {
+        if (score < 5)
+        {
+            Debug.Log("セリフです");
+        }
+
+        else if (score <= 5)
+        {
+            Debug.Log("いい感じのセリフです");
+        }
+
+    }
+
 }
+

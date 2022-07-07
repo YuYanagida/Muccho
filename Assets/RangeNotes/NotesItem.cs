@@ -50,7 +50,7 @@ public class NotesItem : PlayingEventItem
         if (isPlaying && other.CompareTag(_targetTagName1))
         {
             //displayObject.SetActive(false);
-            hitCallback?.Invoke(0);
+           // hitCallback?.Invoke(0);
 
             Debug.Log($"{currentTime} {normalizedTime}");
 
@@ -79,6 +79,9 @@ public class NotesItem : PlayingEventItem
                     se.PlayOneShot(_se);
 
                     SEplayed = true;
+
+                    ScoreCounter.AddScore(1);
+
                 }
 
             }
@@ -93,6 +96,9 @@ public class NotesItem : PlayingEventItem
                     se.PlayOneShot(_sef);
 
                     SEplayed = true;
+
+                    ScoreCounter.AddScore(2);
+
                 }
 
             }
@@ -107,6 +113,9 @@ public class NotesItem : PlayingEventItem
                     se.PlayOneShot(_sem);
 
                     SEplayed = true;
+
+                    ScoreCounter.AddScore(3);
+
                 }
 
             }
