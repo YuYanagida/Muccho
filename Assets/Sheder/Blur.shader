@@ -27,6 +27,9 @@ Shader "Custom/Blur"
                     float4 vertex : POSITION;
                     float2 uv : TEXCOORD0;
                     fixed4 color : COLOR;
+
+                    //UNITY_VERTEX_INPUT_INSTANCE_ID // ’Ç‰Á
+
                 };
 
                 struct v2f
@@ -34,6 +37,9 @@ Shader "Custom/Blur"
                     float4 grabPos : TEXCOORD0;
                     float4 pos : SV_POSITION;
                     float4 vertColor : COLOR;
+
+                    //UNITY_VERTEX_OUTPUT_STEREO // ’Ç‰Á
+
                 };
 
                 v2f vert(appdata v)

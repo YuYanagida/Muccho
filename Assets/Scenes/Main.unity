@@ -37333,12 +37333,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 7ea21acb4b6ff194e8706c78685f39d1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.22
+      value: 2.39
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7ea21acb4b6ff194e8706c78685f39d1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.34
+      value: 4.22
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7ea21acb4b6ff194e8706c78685f39d1,
         type: 3}
@@ -90491,7 +90491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 4c4ce2d289b4cb047a7cedce72510ce8, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -114348,6 +114348,10 @@ PlayableDirector:
     value: {fileID: 1434006503}
   - key: {fileID: -3641650607289715805, guid: db020ddba98f3024f931c60cce75f957, type: 2}
     value: {fileID: 1556022218}
+  - key: {fileID: -1630441086234726610, guid: db020ddba98f3024f931c60cce75f957, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 471118147291952705, guid: db020ddba98f3024f931c60cce75f957, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References:
     - 0838210898346eb46a90402f2dfa8aae: {fileID: 1749300256}

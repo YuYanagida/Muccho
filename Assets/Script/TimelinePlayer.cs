@@ -30,5 +30,9 @@ public class TimelinePlayer : MonoBehaviour
         Debug.Log("ƒ{ƒ^ƒ“‚ð‰Ÿ‚µ‚½‚æ");
 
         director.Play();
+
+        //this.gameObject.SetActive(false);
+
     }
+
 }
