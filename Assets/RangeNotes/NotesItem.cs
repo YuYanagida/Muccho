@@ -10,6 +10,7 @@ public class NotesItem : PlayingEventItem
     #region VARIABLE
     public string _targetTagName1 = "Player";
     public GameObject displayObject;
+   // public GameObject KakegoeObject;
     public ParticleSystem activationEffect;
     public ParticleSystem hitEffect;
     public AudioSource se;
@@ -53,6 +54,17 @@ public class NotesItem : PlayingEventItem
            // hitCallback?.Invoke(0);
 
             Debug.Log($"{currentTime} {normalizedTime}");
+
+            // KakegoeObject.SetActive(true);
+
+            OVRInput.SetControllerVibration(frequency: 0.1f, amplitude: 0.1f);
+
+            //指定された時間待つ
+            //yield return new WaitForSeconds(2);
+
+            //コントローラーの振動を止める
+            //OVRInput.SetControllerVibration(0, 0);
+
 
             if (hitEffect != null)
             {
