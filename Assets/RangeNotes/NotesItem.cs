@@ -10,7 +10,7 @@ public class NotesItem : PlayingEventItem
     #region VARIABLE
     public string _targetTagName1 = "Player";
     public GameObject displayObject;
-   // public GameObject KakegoeObject;
+    public GameObject[] KakegoeObject;
     public ParticleSystem activationEffect;
     public ParticleSystem hitEffect;
     public AudioSource se;
@@ -54,6 +54,8 @@ public class NotesItem : PlayingEventItem
            // hitCallback?.Invoke(0);
 
             Debug.Log($"{currentTime} {normalizedTime}");
+
+            Instantiate(KakegoeObject[Random.Range(0, 9)], new Vector3(7.5f, 3.5f, 6), Quaternion.identity);
 
             // KakegoeObject.SetActive(true);
 
