@@ -11,11 +11,14 @@ public class NotesItem : PlayingEventItem
     public string _targetTagName1 = "Player";
     public GameObject displayObject;
     public GameObject[] KakegoeObject;
+    public GameObject[] FeeverObject;
+    public GameObject[] MissObject;
     public ParticleSystem activationEffect;
     public ParticleSystem hitEffect;
     public AudioSource se;
     public AudioClip clip;
     public bool SEplayed = false;
+    public bool Mojibool = false;
     public AudioClip[] SEs;
     public AudioClip[] SEsm;
     public AudioClip[] SEsf;
@@ -55,7 +58,14 @@ public class NotesItem : PlayingEventItem
 
             Debug.Log($"{currentTime} {normalizedTime}");
 
-            Instantiate(KakegoeObject[Random.Range(0, 9)], new Vector3(7.5f, 3.5f, 6), Quaternion.identity);
+            if (Mojibool == false)
+            {
+                Instantiate(KakegoeObject[Random.Range(0, 9)], new Vector3(7.5f, 3.5f, 6), Quaternion.identity);
+
+                Mojibool = true;
+
+            }
+            //Instantiate(KakegoeObject[Random.Range(0, 9)], new Vector3(7.5f, 3.5f, 6), Quaternion.identity);
 
             // KakegoeObject.SetActive(true);
 
@@ -88,15 +98,11 @@ public class NotesItem : PlayingEventItem
             {
                 Debug.Log($"Fast");
 
-                if (SEplayed == false)
+                if (Mojibool == false)
                 {
-                    AudioClip _se = SEs[Random.Range(0, 9)];
+                    Instantiate(KakegoeObject[Random.Range(0, 9)], new Vector3(7.5f, 3.5f, 6), Quaternion.identity);
 
-                    se.PlayOneShot(_se);
-
-                    SEplayed = true;
-
-                    ScoreCounter.AddScore(1);
+                    Mojibool = true;
 
                 }
 
@@ -105,7 +111,15 @@ public class NotesItem : PlayingEventItem
             {
                 Debug.Log($"Just");
 
-                if (SEplayed == false)
+                if (Mojibool == false)
+                {
+                    Instantiate(FeeverObject[Random.Range(0, 9)], new Vector3(7.5f, 3.5f, 6), Quaternion.identity);
+
+                    Mojibool = true;
+
+                }
+
+                /*if (SEplayed == false)
                 {
                     AudioClip _sef = SEsf[Random.Range(0, 9)];
 
@@ -115,22 +129,18 @@ public class NotesItem : PlayingEventItem
 
                     ScoreCounter.AddScore(2);
 
-                }
+                }*/
 
             }
             else if (normalizedTime > 0.5f)
             {
                 Debug.Log($"Slow");
 
-                if (SEplayed == false)
+                if (Mojibool == false)
                 {
-                    AudioClip _sem = SEsm[Random.Range(0, 6)];
+                    Instantiate(MissObject[Random.Range(0, 6)], new Vector3(7.5f, 3.5f, 6), Quaternion.identity);
 
-                    se.PlayOneShot(_sem);
-
-                    SEplayed = true;
-
-                    ScoreCounter.AddScore(3);
+                    Mojibool = true;
 
                 }
 

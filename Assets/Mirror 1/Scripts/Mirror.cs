@@ -92,7 +92,7 @@ namespace nkjzm.Mirror
             //Specular.rotation = Quaternion.LookRotation(Specular.position - TrackingCamera.transform.position);
 
             // フレームのサイズを更新
-            Frame.localScale = new Vector3(Size, Size, 1);
+            Frame.localScale = new Vector3(Size, Size*0.5f, 1);
             // 鏡面のサイズを調整
             var angle = Vector3.Angle(-transform.forward, ReflectionCamera.transform.forward);
 	    //var angle_2 = angle * 0.25f;

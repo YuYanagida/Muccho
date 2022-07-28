@@ -5,6 +5,9 @@ public class ScoreCounter : MonoBehaviour
 {
     public static int score;
     //public Text scoreDisplay;
+    public AudioSource great;
+    public AudioSource good;
+    public AudioSource bad;
 
     public static void AddScore(int point)
     {
@@ -19,6 +22,9 @@ public class ScoreCounter : MonoBehaviour
         if (score < 5)
         {
             Debug.Log("ƒZƒŠƒt‚Å‚·");
+
+            //good.PlayOneShot();
+
         }
 
         else if (score <= 5)
