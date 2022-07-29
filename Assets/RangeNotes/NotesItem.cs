@@ -10,6 +10,7 @@ public class NotesItem : PlayingEventItem
     #region VARIABLE
     public string _targetTagName1 = "Player";
     public GameObject displayObject;
+    public GameObject PoseObject;
     public GameObject[] KakegoeObject;
     public GameObject[] FeeverObject;
     public GameObject[] MissObject;
@@ -57,6 +58,9 @@ public class NotesItem : PlayingEventItem
            // hitCallback?.Invoke(0);
 
             Debug.Log($"{currentTime} {normalizedTime}");
+
+            PoseObject.SetActive(true);
+            
 
             if (Mojibool == false)
             {
@@ -147,6 +151,13 @@ public class NotesItem : PlayingEventItem
             }
 
         }
+
+        /*void OnTriggerExit(Collider other)
+        {
+            Debug.Log("はずれたオブジェクト : "+other);
+            // 必要なら other がどのオブジェクトのものなのかチェック
+            PoseObject.SetActive(false);
+        }*/
     }
 
     #endregion
@@ -169,6 +180,12 @@ public class NotesItem : PlayingEventItem
 
     public override void OnStop()
     {
+
+        Debug.Log("きえます");
+        
+        PoseObject.SetActive(false);
+        //Kierubool = true;
+
         if (displayObject != null)
         {
             displayObject.SetActive(false);
