@@ -11,6 +11,7 @@ public class NotesItem : PlayingEventItem
     public string _targetTagName1 = "Player";
     public GameObject displayObject;
     public GameObject PoseObject;
+    public GameObject AvaterObject;
     public GameObject[] KakegoeObject;
     public GameObject[] FeeverObject;
     public GameObject[] MissObject;
@@ -60,7 +61,9 @@ public class NotesItem : PlayingEventItem
             Debug.Log($"{currentTime} {normalizedTime}");
 
             PoseObject.SetActive(true);
-            
+
+            AvaterObject.SetActive(false);
+
 
             if (Mojibool == false)
             {
@@ -175,7 +178,9 @@ public class NotesItem : PlayingEventItem
             activationEffect.Play(true);
         }
 
-       
+        
+
+
     }
 
     public override void OnStop()
@@ -185,6 +190,8 @@ public class NotesItem : PlayingEventItem
         
         PoseObject.SetActive(false);
         //Kierubool = true;
+
+        AvaterObject.SetActive(true);
 
         if (displayObject != null)
         {
