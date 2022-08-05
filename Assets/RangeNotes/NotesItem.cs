@@ -67,7 +67,7 @@ public class NotesItem : PlayingEventItem
 
             if (Mojibool == false)
             {
-                Instantiate(KakegoeObject[Random.Range(0, 9)], new Vector3(7.5f, 3.5f, 6), Quaternion.identity);
+                Instantiate(KakegoeObject[Random.Range(0, 9)], new Vector3(7.5f, 3.0f, 6), Quaternion.identity);
 
                 Mojibool = true;
 
@@ -113,6 +113,9 @@ public class NotesItem : PlayingEventItem
 
                 }
 
+
+                ScoreCounter.AddScore(2);
+
             }
             else if (normalizedTime > 0.25f && normalizedTime <= 0.5f)
             {
@@ -125,6 +128,8 @@ public class NotesItem : PlayingEventItem
                     Mojibool = true;
 
                 }
+
+                ScoreCounter.AddScore(2);
 
                 /*if (SEplayed == false)
                 {
@@ -150,6 +155,7 @@ public class NotesItem : PlayingEventItem
                     Mojibool = true;
 
                 }
+                ScoreCounter.AddScore(2);
 
             }
 
@@ -185,9 +191,10 @@ public class NotesItem : PlayingEventItem
 
     public override void OnStop()
     {
+        OVRInput.SetControllerVibration(0, 0);
 
-        Debug.Log("‚«‚¦‚Ü‚·");
-        
+        //Debug.Log("‚«‚¦‚Ü‚·");
+
         PoseObject.SetActive(false);
         //Kierubool = true;
 
