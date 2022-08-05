@@ -109,12 +109,14 @@ public class NotesItem : PlayingEventItem
                 {
                     Instantiate(KakegoeObject[Random.Range(0, 9)], new Vector3(7.5f, 3.5f, 6), Quaternion.identity);
 
+                    ScoreCounter.AddScore(3);
+
                     Mojibool = true;
 
                 }
 
 
-                ScoreCounter.AddScore(2);
+                
 
             }
             else if (normalizedTime > 0.25f && normalizedTime <= 0.5f)
@@ -125,11 +127,13 @@ public class NotesItem : PlayingEventItem
                 {
                     Instantiate(FeeverObject[Random.Range(0, 9)], new Vector3(7.5f, 3.5f, 6), Quaternion.identity);
 
+                    ScoreCounter.AddScore(2);
+
                     Mojibool = true;
 
                 }
 
-                ScoreCounter.AddScore(2);
+                
 
                 /*if (SEplayed == false)
                 {
@@ -152,10 +156,12 @@ public class NotesItem : PlayingEventItem
                 {
                     Instantiate(MissObject[Random.Range(0, 6)], new Vector3(7.5f, 3.5f, 6), Quaternion.identity);
 
+                    ScoreCounter.AddScore(1);
+
                     Mojibool = true;
 
                 }
-                ScoreCounter.AddScore(2);
+                
 
             }
 
