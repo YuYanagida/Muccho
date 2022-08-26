@@ -91,7 +91,7 @@ Shader "Custom/Blur"
                 }
                 ENDCG
             }
-            GrabPass
+            /*GrabPass
             {
             }
 
@@ -168,7 +168,7 @@ Shader "Custom/Blur"
                     return col;
                 }
                 ENDCG
-            }
+            }*/
 
         }
 }

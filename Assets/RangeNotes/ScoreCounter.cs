@@ -11,6 +11,7 @@ public class ScoreCounter : MonoBehaviour
     public AudioClip[] Bad;
     public AudioClip[] Good;
     public AudioClip[] Great;
+    public GameObject clearcamvas;
 
     public static void AddScore(int point)
     {
@@ -22,6 +23,8 @@ public class ScoreCounter : MonoBehaviour
 
     public void TotalScore()
     {
+        clearcamvas.SetActive(true);
+
         if (score < 5)
         {
             Debug.Log("—ã‚Ü‚µ‚ÌƒZƒŠƒt‚Å‚·");
