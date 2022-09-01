@@ -7,6 +7,6 @@ public class FinishGame : MonoBehaviour
 {
     public void OnGameStart()
     {
-        SceneManager.LoadScene("Clear");
+        SceneManager.LoadScene("LOGO Page");
     }
 }
