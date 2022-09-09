@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.Events;
 using SeikaGameKit.Timeline;
+using System.Collections;
+using System.Collections.Generic;
 
 public class NotesItem : PlayingEventItem
 {
@@ -24,6 +26,7 @@ public class NotesItem : PlayingEventItem
     public AudioClip[] SEs;
     public AudioClip[] SEsm;
     public AudioClip[] SEsf;
+    public int scorecheck;
 
     [Space]
     public UnityEvent<int> hitCallback;
@@ -53,6 +56,9 @@ public class NotesItem : PlayingEventItem
 
     void OnTriggerStay(Collider other)
     {
+
+        //ScoreCounter.AddScore(12);
+
         if (isPlaying && other.CompareTag(_targetTagName1))
         {
             //displayObject.SetActive(false);
@@ -105,11 +111,15 @@ public class NotesItem : PlayingEventItem
             {
                 Debug.Log($"Fast");
 
+                ScoreCounter.AddScore(3);
+
+                scorecheck = 1;
+
                 if (Mojibool == false)
                 {
-                    Instantiate(KakegoeObject[Random.Range(0, 9)], new Vector3(7.5f, 3.5f, 6), Quaternion.identity);
+                    Instantiate(KakegoeObject[Random.Range(0, 9)], new Vector3(7.5f, 3.5f, 2), Quaternion.identity);
 
-                    ScoreCounter.AddScore(3);
+                    
 
                     Mojibool = true;
 
@@ -123,11 +133,16 @@ public class NotesItem : PlayingEventItem
             {
                 Debug.Log($"Just");
 
+                //ScoreCounter.AddScore(2);
+
+                scorecheck = 2;
+
+
                 if (Mojibool == false)
                 {
-                    Instantiate(FeeverObject[Random.Range(0, 9)], new Vector3(7.5f, 3.5f, 6), Quaternion.identity);
+                    Instantiate(FeeverObject[Random.Range(0, 9)], new Vector3(7.5f, 3.5f, 2), Quaternion.identity);
 
-                    ScoreCounter.AddScore(2);
+                    
 
                     Mojibool = true;
 
@@ -152,11 +167,15 @@ public class NotesItem : PlayingEventItem
             {
                 Debug.Log($"Slow");
 
+                //ScoreCounter.AddScore(1);
+
+                scorecheck = 3;
+
                 if (Mojibool == false)
                 {
-                    Instantiate(MissObject[Random.Range(0, 6)], new Vector3(7.5f, 3.5f, 6), Quaternion.identity);
+                    Instantiate(MissObject[Random.Range(0, 6)], new Vector3(7.5f, 3.5f, 2), Quaternion.identity);
 
-                    ScoreCounter.AddScore(1);
+                    
 
                     Mojibool = true;
 
@@ -215,6 +234,8 @@ public class NotesItem : PlayingEventItem
         {
             activationEffect.Stop(true, ParticleSystemStopBehavior.StopEmitting);
         }
+
+
     }
     #endregion
 

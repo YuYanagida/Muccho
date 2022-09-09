@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
 
 public class ScoreCounter : MonoBehaviour
 {
@@ -23,7 +25,8 @@ public class ScoreCounter : MonoBehaviour
     {
         score += point;
 
-        Debug.Log("score " + score);
+        Debug.Log("score" + score);
+        Debug.Log("ƒJƒEƒ“ƒg‚µ‚½‚æ");
 
     }
 
